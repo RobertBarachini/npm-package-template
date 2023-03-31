@@ -1,0 +1,66 @@
+{
+	"name": "@robert_barachini/npm-package-template",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "A project template for developing and publishing npm packages",
+	"private": false,
+	"main": "dist/lib/cjs/src/index.js",
+	"module": "dist/lib/mjs/src/index.js",
+	"types": "dist/lib/mjs/src/index.d.ts",
+	"scripts": {
+		"prepublish": "npm run build",
+		"build:clean": "rm -rf dist/*",
+		"build:cjs": "tsc -p tsconfig-cjs.json",
+		"build:mjs": "tsc -p tsconfig.json",
+		"build:alias": "tsc-alias -p tsconfig.json && tsc-alias -p tsconfig-cjs.json",
+		"build:post": "./src/scripts/build_support.sh",
+		"build": "npm run build:clean && npm run build:cjs && npm run build:mjs && npm run build:alias && npm run build:post",
+		"start": "NODE_ENV='production' node src/server/index.js",
+		"test:cjs": "npx mocha --recursive dist/lib/cjs/**/*.test.js",
+		"test:mjs": "npx mocha --recursive dist/lib/mjs/**/*.test.js",
+		"test": "npm run test:cjs && npm run test:mjs",
+		"lint": "npx eslint src/**/*.js"
+	},
+	"keywords": [
+		"nodejs",
+		"template",
+		"typescript",
+		"ES6",
+		"commonjs",
+		"eslint",
+		"prettier",
+		"development",
+		"testing",
+		"debug",
+		"mocha"
+	],
+	"author": "Robert Barachini",
+	"license": "UNLICENSED",
+	"devDependencies": {
+		"@types/mocha": "^10.0.1",
+		"@types/node": "^18.15.11",
+		"@typescript-eslint/eslint-plugin": "^5.57.0",
+		"@typescript-eslint/parser": "^5.57.0",
+		"eslint": "^8.36.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-import-resolver-typescript": "^3.5.4",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-mocha": "^10.1.0",
+		"eslint-plugin-node": "^11.1.0",
+		"mocha": "^10.2.0",
+		"tsc-alias": "^1.8.5",
+		"typescript": "^5.0.2"
+	},
+	"engines": {
+		"node": ">=12.0.0"
+	},
+	"imports": {
+		"#utils/*": "./src/utils/*"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/lib/mjs/src/index.js",
+			"require": "./dist/lib/cjs/src/index.js"
+		}
+	}
+}

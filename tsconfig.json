@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"sourceMap": true,
+		"target": "ESNext",
+		"module": "ESNext",
+		"outDir": "dist/lib/mjs",
+		"declaration": true,
+		"declarationDir": "dist/lib/mjs",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"rootDir": ".", // "src",
+		"paths": {
+			"#utils/*": [
+				"./src/utils/*"
+			]
+		},
+		"types": [
+			"node",
+			"mocha"
+		]
+	},
+	"include": [
+		"src/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		// "**/*.test.ts",
+		"src/scripts"
+	],
+}

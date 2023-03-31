@@ -1,0 +1,8 @@
+# Ignore node_modules
+node_modules
+
+# logs/ directory
+logs
+
+# dist/ directory
+dist
