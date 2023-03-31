@@ -104,10 +104,10 @@ Anotehr way of simulating the publishing process is to run `pnpm publish --dry-r
 
 If you are using scoped packages, you will need to add the scope to the name in `package.json` (e.g. `@scope/package-name`). Scoped packages are private by default, so you may want to use the `--access public` flag when publishing. Access is also controlled by the `private` field in `package.json`. Private packages will not be published to the registry.
 
-1. Update the version by running `npm version <major|minor|patch>` or `npm version <version_number>` which should usually follow semantic versioning. This will update the version in `package.json` and create a git tag. If you don't want to create a git tag, you can use `npm version <major|minor|patch> --no-git-tag-version`.
-2. Commit the changes
+1. Commit any changes you have made
+2. Update the version by running `npm version <major|minor|patch>` or `npm version <version_number>` which should usually follow semantic versioning. This will update the version in `package.json` and create a git tag. If you don't want to create a git tag, you can use `npm version <major|minor|patch> --no-git-tag-version`.
 3. Login to npm using `npm login`
-4. Publish the package using `npm publish`
+4. Publish the package using `npm publish` (remember to use the `--access public` flag if you are using scoped packages)
 5. Push the changes to the remote repository
 
 It is also a good practice to test if your package works as intended after publishing. You can do this by creating a new project and installing your package from the registry.
