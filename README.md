@@ -6,7 +6,7 @@ You are free to do whatever you want with this template. If you find it useful, 
 
 This repository is based on https://github.com/RobertBarachini/npm-package-template
 
-Last update: Fri Mar 31 2023 17:36:40 GMT+0200 (Central European Summer Time)
+Last update: Fri Mar 31 2023 19:22:37 GMT+0200 (Central European Summer Time)
 
 # Template usage
 
@@ -71,6 +71,16 @@ If you wish to run the project natively, you will need to install Node.js and np
 ```sh
 pnpm install
 ```
+
+# Scripts (npm)
+
+Not all of the scripts are listed here. Just the main ones you might want to consider.
+
+- `prepack` - runs before the package is packed and published (runs `npm run build`)
+- `build` - builds the project (creates the CommonJS and ES6 libraries in the `dist/` folder)
+- `start` - builds and runs the project at `dist/lib/mjs/src/index.js`
+- `test` - runs the unit tests
+- `lint` - runs ESLint
 
 # Testing
 

@@ -1,8 +1,14 @@
 # Ignore node_modules
 node_modules
 
-# logs/ directory
-logs
-
 # dist/ directory
 dist
+
+# .private directory
+.private
+
+# Notes
+NOTES.md
+
+# Tarballs - useful when running npm pack
+*.tgz
