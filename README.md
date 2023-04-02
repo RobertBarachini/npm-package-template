@@ -74,12 +74,17 @@ pnpm install
 
 # Scripts (npm)
 
-Not all of the scripts are listed here. Just the main ones you might want to consider.
+These are just the main scripts. For a full list, refer to `package.json`.
+
+It is a good practice to run `npm run test` and `npm run lint` before committing any changes (especially before publishing).
+
+The two build pipelines for `mjs` and `cjs` are separated, so you can only build one of them if you want to. Main leads to `cjs`, so if you intend on testing and debugging single files, you should use the specific `cjs` scripts.
 
 - `prepack` - runs before the package is packed and published (runs `npm run build`)
 - `build` - builds the project (creates the CommonJS and ES6 libraries in the `dist/` folder)
 - `start` - builds and runs the project at `dist/lib/mjs/src/index.js`
-- `test` - runs the unit tests
+- `test` - Build the project and run all tests.
+- `test:cjs:custom` - Build the project (CommonJS is enough for this) and run a custom Mocha command. Example: `npm run test:cjs:custom dist/lib/cjs/src/utils/demoJS.test.js`. Here we tell Mocha to run a specific test file.
 - `lint` - runs ESLint
 
 # Testing

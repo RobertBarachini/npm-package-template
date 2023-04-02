@@ -21,6 +21,7 @@
 		"build": "npm run build:cjs && npm run build:mjs",
 		"start": "npm run build && node dist/lib/mjs/src/index.js",
 		"test:cjs": "npm run build:cjs && npx mocha --recursive dist/lib/cjs/**/*.test.js",
+		"test:cjs:custom": "npm run build:cjs && npx mocha",
 		"test:mjs": "npm run build:mjs && npx mocha --recursive dist/lib/mjs/**/*.test.js",
 		"test": "npm run build && npm run test:cjs && npm run test:mjs",
 		"lint": "npx eslint src/**/*.{ts,js} --ext .ts,.js"
