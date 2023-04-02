@@ -1,6 +1,6 @@
 {
 	"name": "@robert_barachini/npm-package-template",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"type": "module",
 	"description": "A project template for developing and publishing npm packages",
 	"private": false,
