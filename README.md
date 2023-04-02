@@ -26,6 +26,8 @@ Have fun `:^)`!
 
 Project is defined as a TypeScript project, but you can also use plain JavaScript. TypeScript is used at build time to transpile the code to CommonJS and ES6 modules, which can be easily required / imported in other projects.
 
+NOTE: When writing import statements, you should always use the `.js` extension. This is because TypeScript will transpile the code to `.js` files, and if you don't specify the extension, the `esm` version of the library will have broken imports. Never ommit the extension when importing files.
+
 Code uses `ES6` syntax (`"type": "module"` in package.json). It is recommended to use `const` and `let`. Use arrow functions. Function declarations using the `function` keyword is discouraged (hoisting can cause issues and decreases readability).
 
 It is also suggested you use good coding practices, such as early returns, avoiding nested if statements, etc.
