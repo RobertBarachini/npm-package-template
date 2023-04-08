@@ -74,6 +74,17 @@ If you wish to run the project natively, you will need to install Node.js and np
 pnpm install
 ```
 
+## Debugging
+
+Run and debug dropdown (as defined in .vscode/launch.json):
+
+- `Launch index.ts (ts-node)` - runs the project with debugger at index.ts using ts-node
+- `Launch current file (ts-node)` - runs the current file with debugger using ts-node
+- `Launch index.js (build cjs)` - builds and runs the project with debugger at index.js using the built CommonJS version (mapping defined in package.json, key `main`)
+- `Launch current file (build cjs)` - builds and runs the current file with debugger using the built CommonJS version (mapping defined in package.json, key `main`)
+
+NOTE: There are some differences between the two options (native with node and ts-node). The advantage of using ts-node is that you get a really quick startup which may be useful for most cases. It also provides good "hover" information. The main issue is that it may just over certain breakpoints if set at `import` statements. When choosing the native debug option, you will get a more accurate debugging experience, but it will take longer to start (does a clean build of cjs files + types).
+
 # Scripts (npm)
 
 These are just the main scripts. For a full list, refer to `package.json`.

@@ -5,11 +5,33 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Launch index.ts (ts-node)",
 			"type": "node",
 			"request": "launch",
-			"name": "Launch index.js",
+			"runtimeArgs": [
+				"--loader",
+				"ts-node/esm",
+				"${workspaceFolder}/src/index.ts"
+			],
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Launch current file (ts-node)",
+			"type": "node",
+			"request": "launch",
+			"runtimeArgs": [
+				"--loader",
+				"ts-node/esm",
+				"${file}"
+			],
+			"console": "integratedTerminal",
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch index.js (build cjs)",
 			"program": "${workspaceFolder}/src/index.ts",
-			"preLaunchTask": "npm run build",
+			"preLaunchTask": "npm run build:cjs",
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			]
@@ -17,9 +39,9 @@
 		{
 			"type": "node",
 			"request": "launch",
-			"name": "Launch current file",
+			"name": "Launch current file (build cjs)",
 			"program": "${file}",
-			"preLaunchTask": "npm run build",
+			"preLaunchTask": "npm run build:cjs",
 			"outFiles": [
 				"${workspaceFolder}/dist/**/*.js"
 			]

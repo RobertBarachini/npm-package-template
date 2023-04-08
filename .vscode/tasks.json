@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npm run build:cjs",
+			"type": "npm",
+			"script": "build:cjs",
+			"group": "build",
+			"problemMatcher": [],
+		}
+	]
+}
